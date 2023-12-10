@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1702160638 "/home/heitormesk/Desktop/Trabalho-WISE/latex/bare_jrnl.tex" "bare_jrnl.pdf" "bare_jrnl" 1702160639
+["pdflatex"] 1702179394 "/home/heitormesk/Desktop/Trabalho-WISE/latex/bare_jrnl.tex" "bare_jrnl.pdf" "bare_jrnl" 1702179395
   "/etc/texmf/web2c/texmf.cnf" 1700697410 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/heitormesk/Desktop/Trabalho-WISE/latex/bare_jrnl.tex" 1702160638 26848 4635a433b3c743bd81bdf32ab27339be ""
+  "/home/heitormesk/Desktop/Trabalho-WISE/latex/bare_jrnl.tex" 1702179394 9918 8e0ec054d33af8372f50916190e1fa12 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -38,8 +38,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1700697449 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1700697509 2801499 0c455b228b6c6cc1cc652f4a42d46cee ""
-  "bare_jrnl.aux" 1702160639 1172 8e330c95c63d496501cbe20de8414534 "pdflatex"
-  "bare_jrnl.tex" 1702160638 26848 4635a433b3c743bd81bdf32ab27339be ""
+  "bare_jrnl.aux" 1702179395 2375 a87b6007462a4d4bf08f63cf27810f02 "pdflatex"
+  "bare_jrnl.tex" 1702179394 9918 8e0ec054d33af8372f50916190e1fa12 ""
   (generated)
   "bare_jrnl.aux"
   "bare_jrnl.log"
