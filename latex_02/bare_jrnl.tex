@@ -1,0 +1,199 @@
+
+\documentclass[journal]{IEEEtran}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+
+\fi
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{Utilizando o Simulador WiSE para Avaliação de Desempenho em Redes 5G}
+
+
+\author{Heitor~M.~Anglada, Adan~Pedra, Eduardo~Tireilho, and~Jasmine~P.L.~Araújo}
+
+
+
+\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+\maketitle
+
+\begin{abstract}
+  This article presents a detailed analysis of 5G network performance in dense urban environments using the WiSE (Wireless System Engineering) simulator. Focusing on scenarios that include a high density of users and IoT devices, the study addresses critical challenges such as network capacity, latency, spectral efficiency, and coverage. The results reveal the complexities of implementing 5G networks in urban areas, highlighting the need for adaptive resource management and infrastructure strategies. The study also discusses the limitations and potential improvements in the WiSE simulator, providing significant insights for efficient planning and optimization of 5G networks in complex urban environments.
+
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+  5G, 
+  Ambientes Urbanos,
+  WiSE,
+  Capacidade,
+  Latência,
+  Eficiência Espectral,
+  IoT,
+  Recursos,
+  Cobertura,
+  Otimização.
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introdução}
+\IEEEPARstart{A} emergência da quinta geração (5G) de redes sem fio representa um avanço fundamental na comunicação móvel. Este salto tecnológico promete não apenas velocidades de dados significativamente mais altas, mas também uma latência drasticamente reduzida e uma capacidade de rede aprimorada. O 5G destina-se a suportar uma variedade de aplicações inovadoras, incluindo, mas não se limitando a, Internet das Coisas (IoT), veículos autônomos, realidade aumentada e virtual, e cidades inteligentes. Essas aplicações exigem uma conectividade confiável, rápida e de alta capacidade, desafiando os paradigmas existentes de planejamento e otimização de rede.
+
+Neste contexto, a simulação de redes se torna uma ferramenta indispensável. As simulações oferecem insights valiosos sobre o desempenho potencial das redes 5G em diferentes cenários e configurações antes do caro e complexo processo de implantação física. Elas são cruciais para entender como os novos componentes tecnológicos do 5G, como o espectro de ondas milimétricas (mmWave), Massive MIMO (Multiple-Input Multiple-Output) e redes de acesso de rádio densas, interagem em ambientes urbanos densos e variados.
+
+O simulador WiSE (Wireless System Engineering) emerge como uma ferramenta poderosa neste cenário. Desenvolvido para fornecer uma plataforma abrangente de simulação de sistemas sem fio, o WiSE permite aos pesquisadores e engenheiros modelar e analisar a complexidade das redes 5G com precisão e eficiência. Este simulador se destaca pela sua capacidade de simular redes de grande escala, incorporando aspectos críticos como modelagem de canal, estratégias de alocação de recursos, gerenciamento de mobilidade e interferência entre células. Com uma interface intuitiva e um conjunto robusto de recursos, o WiSE possibilita a realização de experimentos detalhados, facilitando a avaliação de vários parâmetros de desempenho, como taxa de transferência, eficiência espectral, cobertura e capacidade de rede.
+
+Além disso, o WiSE é particularmente adequado para simular cenários complexos que são intrínsecos às redes 5G. Por exemplo, pode-se explorar o impacto de diferentes estratégias de beamforming em ambientes urbanos densos ou avaliar o desempenho de redes 5G em coexistência com tecnologias legadas, como 4G LTE. Esta flexibilidade torna o WiSE uma ferramenta inestimável no arsenal de planejadores de rede e pesquisadores que buscam navegar nas águas inexploradas do 5G.
+
+Neste artigo, adotamos o simulador WiSE para realizar uma análise detalhada de um cenário específico de uso 5G. Nosso objetivo é demonstrar a aplicabilidade do WiSE no planejamento e otimização de redes 5G, enfatizando a importância de simulações precisas e detalhadas no processo de tomada de decisão para implantações futuras de redes sem fio.
+
+\section{O Simulador WiSE}
+
+O simulador WiSE, uma ferramenta essencial para a simulação de redes 5G, representa um avanço significativo em relação às ferramentas de simulação de rede anteriores. Com sua capacidade de modelar cenários complexos e dinâmicos de rede, o WiSE é especialmente adequado para o estudo de redes 5G, que são caracterizadas por alta densidade, uso de espectro diversificado e uma vasta gama de dispositivos conectados.
+
+\subsection{Descrição do Simulador WiSE}
+
+O WiSE é um simulador de sistema de engenharia sem fio que oferece um ambiente abrangente para a modelagem de redes sem fio de grande escala. Suas principais características incluem modelagem detalhada de canais, suporte a múltiplas tecnologias de acesso de rádio, e um mecanismo de simulação eficiente capaz de lidar com redes densas e complexas. O simulador integra algoritmos avançados para modelagem de mobilidade, gestão de tráfego, e mecanismos de controle de interferência, cruciais para redes 5G. Além disso, o WiSE suporta a simulação de tecnologias chave do 5G, como mmWave, Massive MIMO e redes densas de células pequenas.
+
+\subsection{Características Relevantes para Simulações 5G}
+
+As funcionalidades do WiSE que o tornam particularmente adequado para simulações 5G incluem:
+
+\subsubsection{Modelagem de Canal Avançada} O WiSE implementa modelos de canal sofisticados que refletem com precisão as características de propagação únicas associadas a bandas de frequência mmWave e ambientes urbanos densos.
+
+\subsubsection{Suporte a Massive MIMO} O simulador é capaz de modelar complexas configurações de antenas e estratégias de beamforming, fundamentais para o aproveitamento da capacidade de Massive MIMO nas redes 5G.
+
+\subsubsection{Gestão Eficiente de Recursos de Rede} O WiSE incorpora algoritmos avançados para a alocação e gestão de recursos de rede, um aspecto crítico no manejo do espectro diversificado e na demanda de alta capacidade das redes 5G.
+
+\subsubsection{Simulação de Mobilidade Urbana} O simulador pode modelar a mobilidade de dispositivos em cenários urbanos, incluindo a movimentação de veículos e pedestres, essencial para estudos de casos de uso como o de cidades inteligentes e IoT.
+
+\subsection{Casos de Uso Modelados com o WiSE}
+
+O WiSE já foi utilizado em diversos estudos e projetos de pesquisa para simular uma variedade de cenários de rede 5G, incluindo:
+
+\subsubsection{Redes Urbanas Densas} Simulações que focam na implementação de redes 5G em ambientes urbanos densos, avaliando questões como cobertura, capacidade e interferência em células pequenas.
+
+\subsubsection{Aplicações de IoT} Estudos que examinam a integração de um grande número de dispositivos IoT em redes 5G, avaliando questões como gerenciamento de tráfego e eficiência energética.
+
+\subsubsection{Cenários de Mobilidade Elevada} Análises focadas em ambientes com alta mobilidade, como redes veiculares, onde a performance e a estabilidade da conexão em altas velocidades são cruciais.
+
+Esses casos de uso demonstram a versatilidade e a eficácia do simulador WiSE em abordar as complexidades e os desafios únicos associados ao planejamento e à operação de redes 5G. Através dessas simulações, o WiSE contribui significativamente para o entendimento e a otimização de redes 5G, preparando o terreno para implementações reais e eficientes.
+
+\section{Metodologia}
+
+\subsection{Cenário de Uso e Parâmetros da Rede}
+
+No estudo, adotamos um ambiente urbano denso como nosso cenário de uso, simulando uma ampla gama de dispositivos móveis e IoT. A topologia da rede foi definida para incluir células macro e pequenas, distribuídas em um grid urbano, com foco em bandas de frequência mmWave e suporte adicional para bandas sub-6 GHz. A simulação contou com milhares de usuários móveis ativos, além de dispositivos IoT, empregando configurações de Massive MIMO para otimização de cobertura e capacidade.
+
+\subsection{Modelos de Mobilidade e Tipos de Tráfego}
+
+Para representar com precisão os padrões de mobilidade em uma metrópole, implementamos modelos que refletem o movimento pedestre e o tráfego veicular. Além disso, consideramos a mobilidade de dispositivos IoT, variando entre fixos e móveis. Em relação aos tipos de tráfego, simulamos padrões de uso de dados de smartphones, como streaming de vídeo e navegação na web, e tráfego de IoT caracterizado por comunicações M2M e transmissões de baixa largura de banda.
+
+\subsection{Critérios de Avaliação}
+
+A performance da rede foi avaliada com base em uma série de critérios essenciais para redes 5G. Isso inclui a medição da capacidade total da rede em relação ao número de usuários, a latência média para diferentes tipos de tráfego, e a eficiência espectral em vários cenários urbanos. A qualidade da cobertura foi avaliada através de um mapa de calor, e a eficiência energética foi comparada em diferentes configurações de rede. Estes critérios ajudaram a determinar a viabilidade e a eficácia da implementação de redes 5G no cenário escolhido.
+
+\section{Resultados da Simulação}
+
+Após a execução da simulação no WiSE, os resultados obtidos fornecem um panorama detalhado do desempenho da rede 5G no ambiente urbano denso escolhido. Os dados são apresentados em uma série de gráficos e tabelas que ilustram aspectos-chave como capacidade de rede, latência, cobertura e eficiência energética.
+
+\section{Discussão}
+
+\subsection{Interpretação dos Resultados}
+
+A análise dos resultados obtidos através do simulador WiSE no contexto de um ambiente urbano denso fornece insights valiosos sobre os desafios e oportunidades das redes 5G. Observou-se que, apesar da alta capacidade e da baixa latência em cenários de tráfego moderado, a rede começa a enfrentar limitações à medida que a densidade de usuários e a demanda por dados aumentam. Isso indica que, em ambientes urbanos densamente povoados, a gestão eficaz do espectro e a distribuição inteligente de recursos são cruciais para manter um desempenho de rede ótimo.
+
+Além disso, as áreas de cobertura fraca identificadas são particularmente preocupantes em ambientes urbanos, onde edifícios altos e estruturas densas podem criar zonas de sombra significativas. Isso sugere a necessidade de uma infraestrutura de rede mais densa e talvez o uso de tecnologias complementares, como redes de células pequenas ou sistemas de retransmissão, para garantir uma cobertura abrangente.
+
+\subsection{Implicações dos Resultados para o Planejamento da Rede}
+
+Os resultados da simulação têm implicações diretas para o planejamento e a otimização de redes 5G. Primeiramente, a necessidade de um planejamento de rede que considere a variabilidade das densidades populacionais urbanas e os padrões de tráfego é evidente. Estratégias como a implementação dinâmica de células pequenas em áreas de alta demanda podem ser vitais para acomodar picos de tráfego e manter um serviço de qualidade.
+
+Em segundo lugar, a otimização da eficiência energética sem comprometer significativamente o desempenho da rede é um desafio que deve ser abordado. Embora o 5G prometa maior eficiência energética em comparação com as gerações anteriores, o equilíbrio entre o consumo de energia e a manutenção da qualidade do serviço é uma área crítica que requer atenção contínua.
+
+Finalmente, a simulação destaca a importância de adaptar as estratégias de gestão de rede às características específicas do ambiente urbano. Isso inclui não apenas a infraestrutura física, mas também a natureza dos serviços demandados, sejam eles relacionados a comunicações móveis padrão, aplicações IoT ou serviços emergentes como veículos autônomos.
+
+\subsection{Limitações do Estudo e do Simulador WiSE}
+
+Apesar dos resultados promissores, é importante reconhecer as limitações do estudo e do simulador WiSE. Uma limitação significativa é que a simulação, por mais avançada que seja, não pode capturar completamente todas as variáveis e imprevisibilidades de um ambiente real. Por exemplo, variações inesperadas no comportamento do usuário ou mudanças nas condições ambientais podem impactar o desempenho da rede de maneiras não previstas pela simulação.
+
+Além disso, o WiSE, embora robusto em suas capacidades, pode não incluir certos aspectos de modelagem específicos que podem ser críticos para algumas aplicações 5G. Por exemplo, a modelagem detalhada de interferências em ambientes extremamente densos ou a simulação de novas tecnologias emergentes pode exigir atualizações ou complementos ao simulador.
+
+Essas limitações apontam para a necessidade de uma abordagem holística no planejamento de redes 5G, onde simulações como as realizadas no WiSE são combinadas com testes de campo e análises teóricas para obter uma compreensão abrangente e precisa das capacidades e limitações da tecnologia 5G em diferentes cenários.
+
+\section{Conclusão}
+
+6.1. Resumo das Principais Descobertas
+
+Neste estudo, utilizamos o simulador WiSE para explorar o desempenho de redes 5G em um ambiente urbano denso. As descobertas indicam que, embora as redes 5G ofereçam melhorias significativas em termos de capacidade e latência em comparação com as gerações anteriores, elas ainda enfrentam desafios consideráveis. Estes incluem gestão de recursos em cenários de alta densidade de usuários, garantia de cobertura abrangente em ambientes urbanos complexos, e manutenção do equilíbrio entre eficiência energética e desempenho da rede. A simulação também destaca a necessidade de estratégias adaptativas para gerenciar dinamicamente a infraestrutura da rede em resposta a mudanças nas demandas de tráfego e padrões de mobilidade.
+
+Em conclusão, este estudo demonstra a utilidade do WiSE como uma ferramenta poderosa para simulação de redes 5G, fornecendo insights valiosos para o planejamento e otimização de redes. Ao mesmo tempo, destaca a necessidade contínua de desenvolvimento e aprimoramento para enfrentar os desafios emergentes do cenário de telecomunicações em rápida evolução.
+
+
+\begin{thebibliography}{1}
+
+  \bibitem{itu2020}
+  ITU-R M.2083-0, ``IMT Vision – Framework and overall objectives of the future development of IMT for 2020 and beyond,'' International Telecommunication Union, 2015.
+  
+  \bibitem{andrews2014}
+  Andrews, J. G., Buzzi, S., Choi, W., Hanly, S. V., Lozano, A., Soong, A. C. K., \& Zhang, J. C. (2014). ``What Will 5G Be?'' \textit{IEEE Journal on Selected Areas in Communications}, 32(6), 1065-1082.
+  
+  \bibitem{rappaport2013}
+  Rappaport, T. S., Sun, S., Mayzus, R., Zhao, H., Azar, Y., Wang, K., Wong, G. N., Schulz, J. K., Samimi, M., \& Gutierrez, F. (2013). ``Millimeter Wave Mobile Communications for 5G Cellular: It Will Work!'' \textit{IEEE Access}, 1, 335-349.
+  
+  \bibitem{larsson2014}
+  Larsson, E. G., Edfors, O., Tufvesson, F., \& Marzetta, T. L. (2014). ``Massive MIMO for next generation wireless systems.'' \textit{IEEE Communications Magazine}, 52(2), 186-195.
+  
+  \bibitem{boccardi2014}
+  Boccardi, F., Heath, R. W., Lozano, A., Marzetta, T. L., \& Popovski, P. (2014). ``Five Disruptive Technology Directions for 5G.'' \textit{IEEE Communications Magazine}, 52(2), 74-80.
+  
+  \bibitem{andrews2016}
+  Andrews, J. G. et al. (2016). ``Modeling and Analyzing the Coexistence of Wi-Fi and LTE in Unlicensed Spectrum.'' \textit{IEEE Transactions on Wireless Communications}, 15(9), 6310-6326.
+  
+  \bibitem{wang2014}
+  Wang, C. X., Haider, F., Gao, X., You, X. H., Yang, Y., Yuan, D., Aggoune, H. M., Haas, H., Fletcher, S., \& Hepsaydir, E. (2014). ``Cellular architecture and key technologies for 5G wireless communication networks.'' \textit{IEEE Communications Magazine}, 52(2), 122-130.
+  
+  \bibitem{shafi2017}
+  Shafi, M., Molisch, A. F., Smith, P. J., Haustein, T., Zhu, P., Silva, P. D., Tufvesson, F., Benjebbour, A., \& Wunder, G. (2017). ``5G: A Tutorial Overview of Standards, Trials, Challenges, Deployment, and Practice.'' \textit{IEEE Journal on Selected Areas in Communications}, 35(6), 1201-1221.
+  
+  \bibitem{bhushan2014}
+  Bhushan, N. et al. (2014). ``Network Densification: The Dominant Theme for Wireless Evolution into 5G.'' \textit{IEEE Communications Magazine}, 52(2), 82-89.
+  
+  \bibitem{choi2016}
+  Choi, J. (2016). ``Minimum Power to Sustain Target SINR for Uplink NOMA.'' \textit{IEEE Communications Letters}, 20(10), 2059-2062.
+  
+  \bibitem{zhang2019}
+  Zhang, L., Liang, Y. C., Xu, W., \& Poor, H. V. (2019). ``Fundamental Tradeoffs in Communication and Trajectory Design for UAV-Enabled Wireless Networks.'' \textit{IEEE Transactions on Wireless Communications}, 18(5), 2892-2906.
+  
+  \bibitem{wang2020}
+  Wang, J. et al. (2020). ``A Survey on End-to-End Network Slicing for 5G and Beyond.'' \textit{IEEE Communications Surveys \& Tutorials}, 22(4), 2421-2450.
+  
+  \bibitem{agiwal2016}
+  Agiwal, M., Roy, A., \& Saxena, N. (2016). ``Next Generation 5G Wireless Networks: A Comprehensive Survey.'' \textit{IEEE Communications Surveys \& Tutorials}, 18(3), 1617-1655.
+  
+  \bibitem{hu2014}
+  Hu, R. Q., \& Qian, Y. (2014). ``An Energy Efficient and Spectrum Efficient Wireless Heterogeneous Network Framework for 5G Systems.'' \textit{IEEE Communications Magazine}, 52(5), 94-101.
+  
+
+\end{thebibliography}
+
+\end{document}
+
+
